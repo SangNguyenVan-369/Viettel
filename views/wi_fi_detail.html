@@ -1,0 +1,37 @@
+<!-- wi_fi_detail.html -->
+<div class="container-fluid service overflow-hidden pt-5" ng-controller="wifiDetailController">
+    <div class="container py-5">
+        <div class="row">
+            <!-- Centered Title with Larger Font Size -->
+            <h2 class="text-center mb-4" style="font-size: 2rem;">{{ details.title }}</h2>
+
+            <!-- Left Column (3) - Selected Card Details -->
+            <div class="col-12 col-lg-3 mb-4">
+                <div class="text-center text-lg-left">
+                    <img ng-src="{{ selectedService.imgSrc }}" class="img-fluid mb-3" alt="{{ selectedService.title }}">
+                    <p style="font-size: 1.25rem;">Tốc độ: {{ selectedService.speed }} {{ selectedService.unit_speed }}</p>
+                    <p style="font-size: 1.25rem;">Giá: {{ selectedService.price | number:0 }}{{ selectedService.unit_price }}</p>
+                </div>
+            </div>
+
+            <!-- Right Column (9) - Service Details -->
+            <div class="col-12 col-lg-9">
+                <!-- Left-aligned Text for Details with Increased Font Size -->
+                <div class="text-left" style="font-size: 1.25rem;">
+                    <h3 class="mb-4" style="font-size: 1.5rem;">Ưu điểm của dịch vụ do Viettel cung cấp:</h3>
+                    <ul>
+                        <li ng-repeat="advantage in details.advantages">{{ advantage }}</li>
+                    </ul>
+
+                    <h3 class="mt-5 mb-4" style="font-size: 1.5rem;">Ưu đãi</h3>
+                    <ul>
+                        <li ng-repeat="offer in details.offers">{{ offer }}</li>
+                    </ul>
+
+                    <h3 class="mt-5 mb-4" style="font-size: 1.5rem;">Đối tượng</h3>
+                    <p>{{ details.target }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

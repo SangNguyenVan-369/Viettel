@@ -1,0 +1,18 @@
+<div class="container-fluid country overflow-hidden py-5" ng-controller="tvController">
+    <div class="container my-5">
+        <div class="row text-center">
+            <!-- Start of a card -->
+            <div class="col-md-3 mb-4" ng-repeat="package in internetPackages">
+                <div class="card shadow-sm border-0 h-100" style="background: linear-gradient(to bottom, red, white); color: white; border-radius: 8px;">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-white">{{package.title}}</h3>
+                        <p class="card-text">{{package.price}}đ</p>
+                        <p class="card-text">{{package.details}}</p>
+                        <button class="btn btn-light">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+            <!-- End of a card -->
+        </div>
+    </div>
+</div>

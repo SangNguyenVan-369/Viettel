@@ -1,0 +1,38 @@
+<!-- Services Start -->
+<div class="container-fluid service overflow-hidden pt-5" ng-controller="wifiController">
+    <div class="container py-5">
+        <!-- Navigation Buttons -->
+        <div class="d-flex justify-content-center mb-4">
+            <div class="d-flex w-50">
+                <button class="btn btn-danger flex-grow-1 me-2 float-start" ng-click="prevPage()" ng-disabled="currentIndex === 0">Trước</button>
+                <button class="btn btn-danger flex-grow-1 ms-2 float-end" ng-click="nextPage()" ng-disabled="currentIndex >= internets.length - itemsPerPage">Tiếp theo</button>
+            </div>
+        </div>
+               
+        <div class="row g-4">
+            <!-- Display items starting from the currentIndex -->
+            <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s"
+                 ng-repeat="internet in internets.slice(currentIndex, currentIndex + itemsPerPage)">
+                <div class="card">
+                    <div class="card-img">
+                        <img ng-src="{{internet.imgSrc}}" class="img-fluid w-100 rounded" alt="Image">
+                    </div>
+                    <div class="card-body">
+                        <a href="#!/internetDetail/{{internet.title}}">
+                            <h4 class="text-danger text-center mb-4 py-3">{{internet.title}}</h4>
+                            <div class="px-4 font-size">
+                                <p class="mb-4">Tốc độ: {{internet.speed || 'Không giới hạn'}} {{internet.unit_speed}} 
+                                    {{internet.price | number:0}}{{internet.unit_price}}</p>
+                                <div class="text-center">
+                                    <a class="btn btn-primary border-secondary rounded-pill py-3 px-5"
+                                       href="#!/internetDetail/{{internet.title}}">Đăng ký</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services End -->

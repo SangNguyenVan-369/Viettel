@@ -1,0 +1,36 @@
+<!-- views/tv_360_detail.html -->
+<div class="container-fluid service overflow-hidden pt-5" ng-controller="tvDetailController">
+    <div class="container py-5">
+        <div class="row">
+            <!-- Title for Selected TV Package -->
+            <h1 class="text-center mb-4 pt-2 pt-md-4" >{{ details.title }}</h1> <!-- Adjusted padding here -->
+
+            <!-- Image and Basic Info -->
+            <div class="col-12 col-lg-3 mb-4">
+                <div class="text-center text-lg-left">
+                    <img ng-src="{{ details.imgSrc }}" class="img-fluid mb-3" alt="{{ details.title }}">
+                    <p style="font-size: 1.25rem;">Số kênh: {{ details.channels }}</p>
+                    <p style="font-size: 1.25rem;">Giá: {{ details.price }}{{ details.unit_price }}</p>
+                </div>
+            </div>
+
+            <!-- Detailed Info -->
+            <div class="col-12 col-lg-9">
+                <div class="text-left" style="font-size: 1.25rem;">
+                    <h3 class="mb-4" style="font-size: 1.5rem;">Ưu điểm của dịch vụ:</h3>
+                    <ul>
+                        <li ng-repeat="advantage in details.advantages">{{ advantage }}</li>
+                    </ul>
+
+                    <h3 class="mt-5 mb-4" style="font-size: 1.5rem;">Ưu đãi</h3>
+                    <ul>
+                        <li ng-repeat="offer in details.offers">{{ offer }}</li>
+                    </ul>
+
+                    <h3 class="mt-5 mb-4" style="font-size: 1.5rem;">Đối tượng</h3>
+                    <p>{{ details.target }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

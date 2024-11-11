@@ -1,0 +1,83 @@
+<!-- Services Start -->
+<div class="container-fluid service overflow-hidden pt-5">
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s" ng-repeat="internet in internets">
+                <div class="service-item">
+                    <div class="service-inner">
+                        <div class="service-img">
+                            <img ng-src="{{internet.imgSrc}}" class="img-fluid w-100 rounded" alt="Image">
+                        </div>
+                        <div class="service-title">
+                            <div class="service-title-name">
+                                <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
+                                    <a href="#" class="h4 text-white mb-0">{{internet.title}}</a>
+                                </div>
+                            </div>
+                            <div class="service-content pb-4"
+                                style="background: linear-gradient(to bottom, rgb(255, 185, 185), rgb(255, 0, 0)); color: rgb(255, 0, 0);">
+                                <a href="#!/internetDetail/{{internet.title}}">
+                                    <h3 class="text-white mb-4 py-3">{{internet.title}}</h3>
+                                    <div class="px-4 font-size">
+                                        <p class="mb-4 text-white" style="font-size: 20px;">Tốc độ : {{internet.speed}}
+                                            {{internet.unit_speed}}
+                                            {{internet.price | number:0}}{{internet.unit_price}}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Devices Start -->
+<div class="container-fluid py-5" ng-controller="homeController">
+    <div class="container">
+        <h2 class="text-center mb-5 fw-bold">THIẾT BỊ ĐI KÈM KHI MUA INTERNET / TRUYỀN HÌNH</h2>
+        <div class="row g-4">
+            <!-- Sử dụng ng-repeat để lặp qua các thiết bị -->
+            <div class="col-md-6 col-sm-6" ng-repeat="device in devices">
+                <div class="card  bg-dark text-white border-0"
+                    ng-class="device.borderClass ? device.borderClass : ''">
+                    <div class="card-body p-4">
+                        <img ng-src="{{device.imgSrc}}" class="img-fluid mb-3" alt="{{device.title}}">
+                        <h3 class="card-title text-white text-center">{{device.title}}</h3>
+                        <p class="card-text text-danger fs-4 fw-bold">{{device.price | number:0}}{{device.unit_price}}</p>                        
+                        <ul >
+                            <li ng-repeat="advantage in device.advantages" class="text-right" style="font-size: 20px;">{{ advantage }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Devices End -->
+
+<!-- Contact Start -->
+<div class="container-fluid contact overflow-hidden pb-5">
+    <div class="container py-5">
+        <div class="office pt-5">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s"
+                    ng-repeat="plan in cameraPlans">
+                    <div class="office-item p-4">
+                        <div class="office-img mb-4">
+                            <img ng-src="{{plan.imgSrc}}" class="img-fluid w-100 rounded" alt="">
+                        </div>
+                        <div class="office-content d-flex flex-column">
+                            <h4 class="mb-2">{{plan.title}}</h4>
+                            <a href="#" class="text-secondary fs-5 mb-2">{{plan.price | number:0}}
+                                {{plan.unit_price}}</a>
+                            <a href="#" class="text-muted fs-5 mb-2">{{plan.description}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->

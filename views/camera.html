@@ -1,0 +1,25 @@
+<!-- Contact Start -->
+<div class="container-fluid contact overflow-hidden pb-5">
+    <div class="container py-5">
+        <div class="office pt-5">
+            <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="display-5 mb-4">Các Gói Cước Camera Cho Ngôi Nhà Của Bạn</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s" ng-repeat="plan in cameraPlans">
+                    <div class="office-item p-4">
+                        <div class="office-img mb-4">
+                            <img ng-src="{{plan.imgSrc}}" class="img-fluid w-100 rounded" alt="">
+                        </div>
+                        <div class="office-content d-flex flex-column">
+                            <h4 class="mb-2">{{plan.title}}</h4>
+                            <a href="#" class="text-secondary fs-5 mb-2">{{plan.price | number:0}} {{plan.unit_price}}</a>
+                            <a href="#" class="text-muted fs-5 mb-2">{{plan.description}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
